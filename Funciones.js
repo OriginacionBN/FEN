@@ -39,13 +39,15 @@ function Validar(lista){
         document.getElementById("aExp").value = lista[5];
         document.getElementById("buro").value = lista[6];
         document.getElementById("nroEnt").value = lista[7];
-
+        var mensaje = lista[8] + "\n" + lista[9] + "\n" + lista[10];
+        
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
         document.getElementById("aExp").disabled = true;
         document.getElementById("tipoCliente").disabled = true;
         document.getElementById("oficina").disabled = true;
 
+        alert(mensaje);
         document.getElementById("carga").style.display = 'none';
     }else{
         alert("El cliente no se encuentra en la base de FEN");
