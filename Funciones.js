@@ -2350,9 +2350,9 @@ function getFEN(){
     var preg1 = document.getElementById("preg1").value;
     lista.push(preg1);
     if(preg1=="Operativa"){
-        document.getElementById("optOpe").value
+        lista.push(document.getElementById("optOpe").value);
     }else{
-        document.getElementById("optInf").value
+        lista.push(document.getElementById("optInf").value);
     }
     lista.push(document.getElementById("preg1Comen").value);
     lista.push(document.getElementById("preg2").value);
