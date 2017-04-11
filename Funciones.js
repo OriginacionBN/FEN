@@ -35,21 +35,25 @@ function Validar(lista){
         //Completar Datos generales y volver a bloquear
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
-        document.getElementById("ubicacion").value = lista[4];
-        document.getElementById("aExp").value = lista[5];
-        document.getElementById("buro").value = lista[6];
-        document.getElementById("nroEnt").value = lista[7];
+        document.getElementById("oficina").value = lista[4];
+        document.getElementById("ubicacion").value = lista[5];
+        document.getElementById("aExp").value = lista[6];
+        document.getElementById("buro").value = lista[7];
+        document.getElementById("nroEnt").value = lista[8];
         
         var mensaje = "";
-        if(lista[8] != ""){
-            mensaje = lista[8] + "\n";
-        }
         if(lista[9] != ""){
-            mensaje = mensaje + lista[9] + "\n";
+            mensaje = lista[9] + "\n";
         }
         if(lista[10] != ""){
             mensaje = mensaje + lista[10] + "\n";
         }
+        if(lista[11] != ""){
+            mensaje = mensaje + lista[11] + "\n";
+        }
+        
+        var datos = lista[12];
+        CompletarCronograma(datos);
 
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
@@ -228,7 +232,6 @@ function Calcular_Ratios() {
     document.getElementById("CicloNegocio").value = Number(CicloNegocio);
     document.getElementById("PayBack").value = Number(payback);
     document.getElementById("CoberturaDeuda").value = Number(CoberturaDeuda);
-    cambioSancion();
 }
 function calcTime(offset) {
     var d = new Date();
