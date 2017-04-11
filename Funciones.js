@@ -35,8 +35,8 @@ function Validar(lista){
         //Completar Datos generales y volver a bloquear
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
-        document.getElementById("oficina").value = lista[4];
-        document.getElementById("ubicacion").value = lista[5];
+        document.getElementById("ubicacion").value = lista[4];
+        document.getElementById("oficina").value = lista[5];
         document.getElementById("aExp").value = lista[6];
         document.getElementById("buro").value = lista[7];
         document.getElementById("nroEnt").value = lista[8];
