@@ -158,7 +158,6 @@ function Calcular_EEFF(){
     Calcular_BG();
     Calcular_EGP();
     Calcular_Ratios();
-    EvaluarCalculadora();
 }
 function Calcular_Ratios() {
 
