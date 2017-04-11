@@ -2326,6 +2326,7 @@ function InformacionGrabar() {
         listaTodo.push(getEgresos());
         listaTodo.push(getPatrimonioInmueble());
         listaTodo.push(getPatrimonioVehMaq());
+        listaTodo.push(getFEN());
         alert("Se grabaron los datos ingresados");
         return listaTodo;
     }
@@ -2343,4 +2344,20 @@ function Finalizar() {
         Descargar_Todo();
         location.replace('https://script.google.com/a/macros/bbva.com/s/AKfycbzqUUDIXsefCDt6tBk1YjEjFVzeHn_3Bc9xxxN_PEKu3_N-LeU/exec');
     }
+}
+function getFEN(){
+    var lista = [];
+    var preg1 = document.getElementById("preg1").value;
+    lista.push(preg1);
+    if(preg1=="Operativa"){
+        document.getElementById("optOpe").value
+    }else{
+        document.getElementById("optInf").value
+    }
+    lista.push(document.getElementById("preg1Comen").value);
+    lista.push(document.getElementById("preg2").value);
+    lista.push(document.getElementById("preg3").value);
+    lista.push(document.getElementById("Seguro").value);
+    lista.push(document.getElementById("EspSeguro").value);
+    lista.push(document.getElementById("preg4").value);
 }
