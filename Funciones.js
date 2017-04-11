@@ -39,7 +39,16 @@ function Validar(lista){
         document.getElementById("aExp").value = lista[5];
         document.getElementById("buro").value = lista[6];
         document.getElementById("nroEnt").value = lista[7];
-        var mensaje = lista[8] + "\n" + lista[9] + "\n" + lista[10];
+        var mensaje = "";
+        if(lista[8] != ""){
+            mensaje = lista[8] + "\n";
+        }
+        if(lista[9] != ""){
+            mensaje = mensaje + lista[9] + "\n";
+        }
+        if(lista[10] != ""){
+            mensaje = mensaje + lista[10] + "\n";
+        }
         
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
