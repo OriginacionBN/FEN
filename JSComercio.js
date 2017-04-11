@@ -271,29 +271,3 @@ function calcular_Margen_Utilidad_Bruta() {
     document.getElementById("egp_costoven").value = Number(egp_costoven).toFixed();
 }
 
-function calcular_ingresos_comercio() {
-    var table = document.getElementById("tablaProductos");
-    var filas = table.rows.length - 1;
-    for (var idx = 1; idx < filas; idx++) {
-        calcular_util_bruta(idx);
-        calcular_ventas_prod(idx)
-    }
-    calcular_informalidad();
-    calcular_Margen_Utilidad_Bruta();
-    Calcular_EEFF();
-}
-function calcular_planilla_comercio() {
-    var num = convNro(document.getElementById("num_planilla_comercio").value);
-    var sueldo = convNro(document.getElementById("sueldo_planilla_comercio").value);
-    if (num > 0 && sueldo > 0) {
-        document.getElementById("total_planilla_comercio").innerHTML = Number(num * sueldo).toLocaleString('en');
-        document.getElementById("total_planilla_comercio").value = Number(num * sueldo);
-        document.getElementById("gastop_comercio_1").innerHTML = Number(num * sueldo).toLocaleString('en');
-        document.getElementById("gastop_comercio_1").value = Number(num * sueldo);
-    } else {
-        document.getElementById("total_planilla_comercio").innerHTML = "";
-        document.getElementById("total_planilla_comercio").value = 0;
-        document.getElementById("gastop_comercio_1").innerHTML = "";
-        document.getElementById("gastop_comercio_1").value = 0;
-    }
-}
