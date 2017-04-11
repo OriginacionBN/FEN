@@ -2360,4 +2360,5 @@ function getFEN(){
     lista.push(document.getElementById("Seguro").value);
     lista.push(document.getElementById("EspSeguro").value);
     lista.push(document.getElementById("preg4").value);
+    return lista;
 }
