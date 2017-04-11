@@ -183,5 +183,5 @@ function EliminarProducto() {
         table.deleteRow(idx);
         calcular_ingresos_comercio();
     }
-
+}
 
