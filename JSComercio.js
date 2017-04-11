@@ -297,31 +297,3 @@ function calcular_planilla_comercio() {
         document.getElementById("gastop_comercio_1").value = 0;
     }
 }
-function calcular_gastop_comercio() {
-    calcular_planilla_comercio();
-    var gastop1 = convNro(document.getElementById("gastop_comercio_1").value);
-    var gastop2 = convNro(document.getElementById("gastop_comercio_2").value);
-    var gastop3 = convNro(document.getElementById("gastop_comercio_3").value);
-    var gastop4 = convNro(document.getElementById("gastop_comercio_4").value);
-    var gastop5 = convNro(document.getElementById("gastop_comercio_5").value);
-    document.getElementById("total_gastop_comercio").innerHTML = Number(gastop1 + gastop2 + gastop3 + gastop4 + gastop5).toLocaleString('en');
-    document.getElementById("total_gastop_comercio").value = Number(gastop1 + gastop2 + gastop3 + gastop4 + gastop5);
-    document.getElementById("egp_gastop").innerHTML = Number(gastop1 + gastop2 + gastop3 + gastop4 + gastop5).toLocaleString('en');
-    document.getElementById("egp_gastop").value = Number(gastop1 + gastop2 + gastop3 + gastop4 + gastop5);
-    Calcular_EEFF();
-}
-function calcular_gastopersonal() {
-    var gasto1 = convNro(document.getElementById("miembros").value) * 360;
-    var gasto2 = convNro(document.getElementById("alquiler").value);
-    var gasto3 = convNro(document.getElementById("deuda_personal").value);
-    var gasto4 = convNro(document.getElementById("otros_personal").value);
-
-    document.getElementById("gastos_implicitos").innerHTML = Number(gasto1).toLocaleString('en');
-    document.getElementById("total_gastpersonal").innerHTML = Number(gasto1 + gasto2 + gasto3 + gasto4).toLocaleString('en');
-    document.getElementById("gastos_implicitos").value = Number(gasto1);
-    document.getElementById("total_gastpersonal").value = Number(gasto1 + gasto2 + gasto3 + gasto4);
-    document.getElementById("egp_gastfam").innerHTML = Number(gasto1 + gasto2 + gasto3 + gasto4).toLocaleString('en');
-    document.getElementById("egp_gastfam").value = Number(gasto1 + gasto2 + gasto3 + gasto4);
-    Calcular_EEFF();
-}
-
