@@ -111,6 +111,7 @@ function EvaluarFiltros1(){
     if(cobertura < 1.4){
         estado = false;
     }
+    alert(estado);
     return estado
 }
 function Preg1(){
