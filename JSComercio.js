@@ -184,4 +184,90 @@ function EliminarProducto() {
         calcular_ingresos_comercio();
     }
 }
+function calcular_ventas_prod(idx) {
+    var unidades_vendidas = convNro(document.getElementById("unidades_vendidas_" + idx).value);
+    var pventa = convNro(document.getElementById("pventa_" + idx).value);
+    var ventas_x_prod = pventa * unidades_vendidas;
+    document.getElementById("ventas_x_prod_" + idx).innerHTML = Number(ventas_x_prod).toLocaleString('en');
+    document.getElementById("ventas_x_prod_" + idx).value = ventas_x_prod;
+    calcular_ventas_prod_Total();
+}
+function calcular_ventas_prod_Total() {
+    var table = document.getElementById("tablaProductos");
+    var filas = table.rows.length - 1;
+    var ventas_x_prod_Total = 0;
+    for (var idx = 1; idx < filas; idx++) {
+        var unidades_vendidas = convNro(document.getElementById("unidades_vendidas_" + idx).value);
+        var pventa = convNro(document.getElementById("pventa_" + idx).value);
+        var ventas_x_prod = pventa * unidades_vendidas;
+        ventas_x_prod_Total += ventas_x_prod;
+}
+function calcular_util_bruta(idx) {
+    var pcompra = convNro(document.getElementById("pcompra_" + idx).value);
+    var pventa = convNro(document.getElementById("pventa_" + idx).value);
+    var util_bruta = 0;
+    if (pventa != 0) {
+        util_bruta = 1 - pcompra / pventa;
+    }
+    document.getElementById("util_bruta_" + idx).innerHTML = Number(util_bruta).toLocaleString('en');
+    document.getElementById("util_bruta_" + idx).value = util_bruta;
+    calcular_util_bruta_Total();
+}
+function calcular_util_bruta_Total() {
+    var table = document.getElementById("tablaProductos");
+    var filas = table.rows.length - 1;
+    var util_bruta_Total = 0;
+    for (var idx = 1; idx < filas; idx++) {
+        var pcompra = convNro(document.getElementById("pcompra_" + idx).value);
+        var pventa = convNro(document.getElementById("pventa_" + idx).value);
+        var util_bruta = 0;
+        if (pventa != 0) {
+            util_bruta = 1 - pcompra / pventa;
+        }
+        util_bruta_Total += util_bruta;
+    }
+    document.getElementById("util_bruta_Total").innerHTML = Number(util_bruta_Total).toLocaleString('en');
+    document.getElementById("util_bruta_Total").value = util_bruta_Total;
+}
+function calcular_informalidad() {
+    var declarado = convNro(document.getElementById("declarado").value);
+    var real = convNro(document.getElementById("vtas_comercio_base").value);
+    if (real > 0) {
+        var informalidad = Number((1 - declarado / real) * 100).toFixed();
+        document.getElementById("informalidad").innerHTML = informalidad + "%";
+        document.getElementById("informalidad").value = informalidad;
+    } else {
+        document.getElementById("informalidad").innerHTML = "";
+    }
+    var egp_impuestos = declarado * 0.015;
+    document.getElementById("egp_impuestos").value = egp_impuestos;
+    egp_impuestos = Number(egp_impuestos).toFixed(0);
+    document.getElementById("egp_impuestos").innerHTML = Number(egp_impuestos).toLocaleString('en');
+}
+function calcular_Margen_Utilidad_Bruta() {
+    var table = document.getElementById("tablaProductos");
+    var filas = table.rows.length - 1;
+    var margen_utilidad_bruta = 0
+    for (var idx = 1; idx < filas; idx++) {
+        var pcompra = convNro(document.getElementById("pcompra_" + idx).value);
+        var unidades_vendidas = convNro(document.getElementById("unidades_vendidas_" + idx).value);
+        margen_utilidad_bruta += pcompra * unidades_vendidas;
+    }
+    var vtas_comercio_base = convNro(document.getElementById("vtas_comercio_base").value);
+    if (vtas_comercio_base != 0) {
+        margen_utilidad_bruta = (1 - (convNro(margen_utilidad_bruta) / vtas_comercio_base)) * 100;
+        document.getElementById("margen_bruto").innerHTML = Number(margen_utilidad_bruta).toFixed() + "%";
+        document.getElementById("margen_bruto").value = Number(margen_utilidad_bruta).toFixed();
+    }
+    var margen_bruto_referencial = convNro(document.getElementById("margen_bruto_referencial").value);
+    var egp_costoven = 0;
+    if (margen_utilidad_bruta > margen_bruto_referencial) {
+        egp_costoven = (100 - margen_bruto_referencial) * vtas_comercio_base / 100;
+    } else {
+        egp_costoven = (100 - margen_utilidad_bruta) * vtas_comercio_base / 100;
+    }
+    document.getElementById("egp_costoven").innerHTML = Number(Number(egp_costoven).toFixed()).toLocaleString('en');
+    ;
+    document.getElementById("egp_costoven").value = Number(egp_costoven).toFixed();
+}
 
