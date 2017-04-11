@@ -244,30 +244,4 @@ function calcular_informalidad() {
     egp_impuestos = Number(egp_impuestos).toFixed(0);
     document.getElementById("egp_impuestos").innerHTML = Number(egp_impuestos).toLocaleString('en');
 }
-function calcular_Margen_Utilidad_Bruta() {
-    var table = document.getElementById("tablaProductos");
-    var filas = table.rows.length - 1;
-    var margen_utilidad_bruta = 0
-    for (var idx = 1; idx < filas; idx++) {
-        var pcompra = convNro(document.getElementById("pcompra_" + idx).value);
-        var unidades_vendidas = convNro(document.getElementById("unidades_vendidas_" + idx).value);
-        margen_utilidad_bruta += pcompra * unidades_vendidas;
-    }
-    var vtas_comercio_base = convNro(document.getElementById("vtas_comercio_base").value);
-    if (vtas_comercio_base != 0) {
-        margen_utilidad_bruta = (1 - (convNro(margen_utilidad_bruta) / vtas_comercio_base)) * 100;
-        document.getElementById("margen_bruto").innerHTML = Number(margen_utilidad_bruta).toFixed() + "%";
-        document.getElementById("margen_bruto").value = Number(margen_utilidad_bruta).toFixed();
-    }
-    var margen_bruto_referencial = convNro(document.getElementById("margen_bruto_referencial").value);
-    var egp_costoven = 0;
-    if (margen_utilidad_bruta > margen_bruto_referencial) {
-        egp_costoven = (100 - margen_bruto_referencial) * vtas_comercio_base / 100;
-    } else {
-        egp_costoven = (100 - margen_utilidad_bruta) * vtas_comercio_base / 100;
-    }
-    document.getElementById("egp_costoven").innerHTML = Number(Number(egp_costoven).toFixed()).toLocaleString('en');
-    ;
-    document.getElementById("egp_costoven").value = Number(egp_costoven).toFixed();
-}
 
