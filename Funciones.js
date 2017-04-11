@@ -33,12 +33,14 @@ function Validar(lista){
         document.getElementById("oficina").disabled = false;
 
         //Completar Datos generales y volver a bloquear
+        google.script.run.withSuccessHandler(InicializarActividad).GetActividades()
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
         document.getElementById("ubicacion").value = lista[4];
         document.getElementById("aExp").value = lista[5];
         document.getElementById("buro").value = lista[6];
         document.getElementById("nroEnt").value = lista[7];
+        
         var mensaje = "";
         if(lista[8] != ""){
             mensaje = lista[8] + "\n";
@@ -49,20 +51,27 @@ function Validar(lista){
         if(lista[10] != ""){
             mensaje = mensaje + lista[10] + "\n";
         }
-        
+
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
         document.getElementById("aExp").disabled = true;
         document.getElementById("tipoCliente").disabled = true;
         document.getElementById("oficina").disabled = true;
-
-        alert(mensaje);
+        document.getElementById("ruc").disabled = true;
+        if(mensaje != ""){
+            alert(mensaje);
+        }
         document.getElementById("carga").style.display = 'none';
     }else{
         alert("El cliente no se encuentra en la base de FEN");
         document.getElementById("carga").style.display = 'none';
     }
-
+}
+function InicializarActividad(actividad){
+    document.getElementById("actividad").options[0] = new Option("");
+    for (i = 0; i < actividad.length; i++) {
+        document.getElementById("actividad").options[i + 1] = new Option(actividad[i], actividad[i]);
+    }
 }
 function Cargar(){
     document.getElementById("carga").style.display = '';
