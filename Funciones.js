@@ -33,7 +33,6 @@ function Validar(lista){
         document.getElementById("oficina").disabled = false;
 
         //Completar Datos generales y volver a bloquear
-        google.script.run.withSuccessHandler(InicializarActividad).GetActividades()
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
         document.getElementById("ubicacion").value = lista[4];
