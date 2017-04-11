@@ -82,7 +82,7 @@ function Cargar(){
 }
 function Dictaminar(){
     var dictamen = "";
-    if(EvaluarFiltros1){
+    if(EvaluarFiltros1()){
         dictamen = "Con capacidad de pago";
     }else{
         dictamen = "Sin capacidad de pago";
