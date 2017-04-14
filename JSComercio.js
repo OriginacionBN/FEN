@@ -202,6 +202,13 @@ function calcular_ventas_prod_Total() {
         var ventas_x_prod = pventa * unidades_vendidas;
         ventas_x_prod_Total += ventas_x_prod;
     }
+    document.getElementById("vtas_comercio_base").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
+    document.getElementById("vtas_comercio_base").value = ventas_x_prod_Total;
+    document.getElementById("ventas_x_prod_Total").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
+    document.getElementById("ventas_x_prod_Total").value = ventas_x_prod_Total;
+
+    document.getElementById("egp_ventas").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
+    document.getElementById("egp_ventas").value = ventas_x_prod_Total;
 }
 function calcular_util_bruta(idx) {
     var pcompra = convNro(document.getElementById("pcompra_" + idx).value);
