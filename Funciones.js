@@ -40,28 +40,25 @@ function Validar(lista){
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
         document.getElementById("ubicacion").value = lista[4];
-        document.getElementById("oficina").value = lista[5];
-        document.getElementById("aExp").value = lista[6];
-        document.getElementById("buro").value = lista[7];
-        document.getElementById("nroEnt").value = lista[8];
-        document.getElementById("fijo").value = lista[9];
-        document.getElementById("celular").value = lista[10];
-        document.getElementById("correot").value = lista[11];
+        document.getElementById("oficina").value = lista[5] + " - " + lista[6];
+        document.getElementById("aExp").value = lista[8];
+        document.getElementById("buro").value = lista[9];
+        document.getElementById("nroEnt").value = lista[10];
+        document.getElementById("fijo").value = lista[12];
+        document.getElementById("celular").value = lista[13];
+        document.getElementById("correo").value = lista[14];
         
         var mensaje = "";
-        if(lista[9] != ""){
+        if(lista[16] != ""){
             mensaje = lista[9] + "\n";
         }
-        if(lista[10] != ""){
+        if(lista[17] != ""){
             mensaje = mensaje + lista[10] + "\n";
         }
-        if(lista[11] != ""){
+        if(lista[18] != ""){
             mensaje = mensaje + lista[11] + "\n";
         }
         
-        var datos = lista[12];
-        CompletarCronograma(datos);
-
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
         document.getElementById("aExp").disabled = true;
