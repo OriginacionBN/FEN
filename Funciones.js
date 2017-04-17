@@ -122,6 +122,28 @@ function EvaluarFiltros1(){
 }
 function Preg1(){
     var seleccion = document.getElementById("preg1").value;
+    if(seleccion == "Si"){
+        document.getElementById("seccion_ingresos").style.display = '';
+        document.getElementById("seccion_egresos").style.display = '';
+        document.getElementById("seccion_patrimonio").style.display = '';
+        document.getElementById("seccion_estados").style.display = '';
+        document.getElementById("s_ingresos").style.display = '';
+        document.getElementById("s_egresos").style.display = '';
+        document.getElementById("s_patrimonio").style.display = '';
+        document.getElementById("s_estados").style.display = '';
+    }else{
+        document.getElementById("seccion_ingresos").style.display = 'none';
+        document.getElementById("seccion_egresos").style.display = 'none';
+        document.getElementById("seccion_patrimonio").style.display = 'none';
+        document.getElementById("seccion_estados").style.display = 'none';
+        document.getElementById("s_ingresos").style.display = 'none';
+        document.getElementById("s_egresos").style.display = 'none';
+        document.getElementById("s_patrimonio").style.display = 'none';
+        document.getElementById("s_estados").style.display = 'none';
+    }
+}
+function Preg2(){
+    var seleccion = document.getElementById("preg2").value;
     document.getElementById("optOpe").style.display = 'none';
     document.getElementById("optInf").style.display = 'none';
     if(seleccion == "Operativa"){
@@ -130,8 +152,8 @@ function Preg1(){
         document.getElementById("optInf").style.display = '';
     }
 }
-function Preg3(){
-    var seleccion = document.getElementById("preg3").value;
+function Preg4(){
+    var seleccion = document.getElementById("preg4").value;
     document.getElementById("optSi").style.display = 'none';
     document.getElementById("optOtra").style.display = 'none';
     if(seleccion == "Si"){
