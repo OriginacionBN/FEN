@@ -50,13 +50,13 @@ function Validar(lista){
         
         var mensaje = "";
         if(lista[16] != ""){
-            mensaje = lista[9] + "\n";
+            mensaje = lista[16] + "\n";
         }
         if(lista[17] != ""){
-            mensaje = mensaje + lista[10] + "\n";
+            mensaje = mensaje + lista[17] + "\n";
         }
         if(lista[18] != ""){
-            mensaje = mensaje + lista[11] + "\n";
+            mensaje = mensaje + lista[18] + "\n";
         }
         
         document.getElementById("nroEnt").disabled = true;
