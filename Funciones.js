@@ -2229,6 +2229,12 @@ function getResumen(){
 /*******************************************************************/
 
 function CompletarCronograma(datos){
+    
+    document.getElementById("PA_DIFF").value = datos[13];
+    document.getElementById("PP_LD_DIFF").value = datos[14];
+    document.getElementById("PP_H_DIFF").value = datos[15];
+    document.getElementById("PP_V_DIFF").value = datos[16];
+    
     // Lineas / Tarjetas Capital
     AgregarLineaTarjeta();
     D_TKT = datos[1];
@@ -2348,16 +2354,18 @@ function getFEN(){
     var lista = [];
     var preg1 = document.getElementById("preg1").value;
     lista.push(preg1);
-    if(preg1=="Operativa"){
+    var preg2 = document.getElementById("preg2").value;
+    lista.push(preg2);
+    if(preg2=="Operativa"){
         lista.push(document.getElementById("optOpe").value);
     }else{
         lista.push(document.getElementById("optInf").value);
     }
-    lista.push(document.getElementById("preg1Comen").value);
-    lista.push(document.getElementById("preg2").value);
+    lista.push(document.getElementById("preg2Comen").value);
     lista.push(document.getElementById("preg3").value);
+    lista.push(document.getElementById("preg4").value);
     lista.push(document.getElementById("Seguro").value);
     lista.push(document.getElementById("EspSeguro").value);
-    lista.push(document.getElementById("preg4").value);
+    lista.push(document.getElementById("preg5").value);
     return lista;
 }
