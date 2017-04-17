@@ -59,6 +59,9 @@ function Validar(lista){
         if(lista[18] != ""){
             mensaje = mensaje + lista[18] + "\n";
         }
+        if(lista[19] != ""){
+            mensaje = mensaje + lista[19] + "\n";
+        }
         
         document.getElementById("nroEnt").disabled = true;
         document.getElementById("buro").disabled = true;
