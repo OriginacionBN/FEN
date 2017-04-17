@@ -41,6 +41,7 @@ function Validar(lista){
         document.getElementById("razonSocial").value = lista[3];
         document.getElementById("ubicacion").value = lista[4];
         document.getElementById("oficina").value = lista[5] + " - " + lista[6];
+        document.getElementById("codOficina").value = lista[5];
         document.getElementById("aExp").value = lista[8];
         document.getElementById("buro").value = lista[9];
         document.getElementById("nroEnt").value = lista[10];
