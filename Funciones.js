@@ -25,6 +25,9 @@ function Validar(lista){
         document.getElementById("nroPtosVta").disabled = false;
         document.getElementById("nroAlmacenes").disabled = false;
         document.getElementById("edadRL").disabled = false;
+        document.getElementById("fijo").disabled = false;
+        document.getElementById("celular").disabled = false;
+        document.getElementById("correo").disabled = false;
 
         document.getElementById("nroEnt").disabled = false;
         document.getElementById("buro").disabled = false;
@@ -41,6 +44,9 @@ function Validar(lista){
         document.getElementById("aExp").value = lista[6];
         document.getElementById("buro").value = lista[7];
         document.getElementById("nroEnt").value = lista[8];
+        document.getElementById("fijo").value = lista[9];
+        document.getElementById("celular").value = lista[10];
+        document.getElementById("correot").value = lista[11];
         
         var mensaje = "";
         if(lista[9] != ""){
