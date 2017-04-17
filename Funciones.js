@@ -47,6 +47,7 @@ function Validar(lista){
         document.getElementById("nroEnt").value = lista[10];
         document.getElementById("fijo").value = lista[12];
         document.getElementById("celular").value = lista[13];
+        document.getElementById("responsable").value = lista[14];
         document.getElementById("correo").value = lista[15];
         
         var mensaje = "";
