@@ -122,7 +122,6 @@ function EvaluarFiltros1(){
 }
 function Preg1(){
     var seleccion = document.getElementById("preg1").value;
-    alert(seleccion)
     if(seleccion == "Si"){
         document.getElementById("seccion_ingresos").style.display = '';
         document.getElementById("seccion_egresos").style.display = '';
