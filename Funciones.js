@@ -51,7 +51,7 @@ function Validar(lista){
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
         if(lista[20] == 1){
-            var bloqueo = documen.getElementById("bloqueo");
+            var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }
         var mensaje = "";
