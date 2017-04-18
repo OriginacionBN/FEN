@@ -51,7 +51,7 @@ function Validar(lista){
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
 
-        CompletarInforme(lista[30]);
+        //CompletarInforme(lista[30]);
 
         if(lista[20] == 1){
             var bloqueo = documen.getElementById("bloqueo");
