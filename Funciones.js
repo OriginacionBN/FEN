@@ -2425,10 +2425,10 @@ function CompletarInforme(datos){
     //CompletarIngresos(ing);
     //var egr = datos[4];
     //CompletarEgresos(egr);
-    //var patInm = datos[5];
-    //CompletarPI(patInm);
-    //var patVeh = datos[6];
-    //CompletarPVM(patVeh);
+    var patInm = datos[5];
+    CompletarPI(patInm);
+    var patVeh = datos[6];
+    CompletarPVM(patVeh);
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
