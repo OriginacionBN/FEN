@@ -2406,8 +2406,8 @@ function getFEN(){
     lista.push(preg1);
     var preg2 = document.getElementById("preg2").value;
     lista.push(preg2);
-    lista.push(document.getElementById("optOpe").value);
-    lista.push(document.getElementById("optInf").value);
+    lista.push(document.getElementById("optOpeS").value);
+    lista.push(document.getElementById("optInfS").value);
     lista.push(document.getElementById("preg2Comen").value);
     lista.push(document.getElementById("preg3").value);
     lista.push(document.getElementById("preg4").value);
