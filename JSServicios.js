@@ -8,7 +8,7 @@ function getDatosCliente1() {
     lista.push(analista);
     var fechaVisita = document.getElementById('fechaVisita').value;
     lista.push(fechaVisita);
-    var oficinas = document.getElementById('oficinas').value;
+    var oficinas = document.getElementById('oficina').value;
     lista.push(oficinas);
     var tipoCliente = document.getElementById('tipoCliente').value;
     lista.push(tipoCliente);
