@@ -2429,6 +2429,7 @@ function CompletarInforme(datos){
     CompletarPI(patInm);
     var patVeh = datos[6];
     CompletarPVM(patVeh);
+    Calcular_EEFF();
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
