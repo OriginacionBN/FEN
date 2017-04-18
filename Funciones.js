@@ -2475,7 +2475,6 @@ function CompletarIngresos(lista) {
         AgregarProducto();
     }
     for (var i = 0; i < codigos.length; i++) {
-        etiquetas.push(codigos[i]);
         var codigo = codigos[i];
         var dato = data[i];
         if (codigo.indexOf("unidades_x_presentacion_") != -1) {
