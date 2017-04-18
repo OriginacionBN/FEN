@@ -9,7 +9,7 @@ function Inicializar() {
 }
 function Validar(lista){
     if(lista[1] !=0){
-        CompletarInforme(lista[30]);
+        //CompletarInforme(lista[30]);
         document.getElementById("validado").style.display = '';
         document.getElementById("btn_grabar").style.display = '';
         document.getElementById("boton_finalizar").style.display = '';
