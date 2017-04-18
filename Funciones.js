@@ -9,6 +9,7 @@ function Inicializar() {
 }
 function Validar(lista){
     if(lista[1] !=0){
+        CompletarInforme(lista[30]);
         document.getElementById("validado").style.display = '';
         document.getElementById("btn_grabar").style.display = '';
         document.getElementById("boton_finalizar").style.display = '';
@@ -51,7 +52,7 @@ function Validar(lista){
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
 
-        CompletarInforme(lista[30]);
+        
 
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
@@ -248,6 +249,8 @@ function Calcular_Ratios() {
 
     if (egp_gastfinan != 0) {
         CoberturaDeuda = (egp_uneta + egp_gastfinan) / egp_gastfinan;
+    }else{
+
     }
 
 
