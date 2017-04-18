@@ -51,7 +51,7 @@ function Validar(lista){
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
 
-        //CompletarInforme(lista[30]);
+        CompletarInforme(lista[30]);
 
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
@@ -2419,16 +2419,16 @@ function getFEN(){
 function CompletarInforme(datos){
     var dc = datos[1];
     CompletarGeneral(dc);
-    var fen = datos[2];
-    CompletarFEN(fen);
-    var ing = datos[3];
-    CompletarIngresos(ing);
-    var egr = datos[4];
-    CompletarEgresos(egr);
-    var patInm = datos[5];
-    CompletarPI(patInm);
-    var patVeh = datos[6];
-    CompletarPVM(patVeh);
+    //var fen = datos[2];
+    //CompletarFEN(fen);
+    //var ing = datos[3];
+    //CompletarIngresos(ing);
+    //var egr = datos[4];
+    //CompletarEgresos(egr);
+    //var patInm = datos[5];
+    //CompletarPI(patInm);
+    //var patVeh = datos[6];
+    //CompletarPVM(patVeh);
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
