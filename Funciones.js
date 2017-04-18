@@ -50,8 +50,11 @@ function Validar(lista){
         document.getElementById("responsable").value = lista[14];
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
+
+        CompletarInforme(lista[30]);
+
         if(lista[20] == 1){
-            var bloqueo = document.getElementById("bloqueo");
+            var bloqueo = documen.getElementById("bloqueo");
             bloqueo.disabled = true;
         }
         var mensaje = "";
@@ -2403,11 +2406,8 @@ function getFEN(){
     lista.push(preg1);
     var preg2 = document.getElementById("preg2").value;
     lista.push(preg2);
-    if(preg2=="Operativa"){
-        lista.push(document.getElementById("optOpe").value);
-    }else{
-        lista.push(document.getElementById("optInf").value);
-    }
+    lista.push(document.getElementById("optOpe").value);
+    lista.push(document.getElementById("optInf").value);
     lista.push(document.getElementById("preg2Comen").value);
     lista.push(document.getElementById("preg3").value);
     lista.push(document.getElementById("preg4").value);
@@ -2415,4 +2415,151 @@ function getFEN(){
     lista.push(document.getElementById("EspSeguro").value);
     lista.push(document.getElementById("preg5").value);
     return lista;
+}
+function CompletarInforme(datos){
+    var dc = datos[1];
+    CompletarGeneral(dc);
+    var fen = datos[2];
+    CompletarFEN(fen);
+    var ing = datos[3];
+    CompletarIngresos(ing);
+    var egr = datos[4];
+    CompletarEgresos(egr);
+    var patInm = datos[5];
+    CompletarPI(patInm):
+    var patVeh = datos[6];
+    CompletarPVM(patVeh):
+}
+function CompletarGeneral(lista) {
+    var codigos = lista[0];
+    var data = lista[1];
+    for (var i = 0; i < codigos.length; i++) {
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("regimen") != -1) {
+            var index = 0;
+            if (dato == "Reg General") {
+                index = 1;
+            } else if (dato == "RER") {
+                index = 2;
+            } else if (dato == "RUS") {
+                index = 3;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("buro") != -1) {
+            
+        } else if (codigo.indexOf("actividad") != -1) {
+            document.getElementById(codigo).selectedIndex = dato;
+        } else if (codigo.indexOf("egp_uneta") != -1 || codigo.indexOf("egp_gastfinan") != -1) {
+            document.getElementById(codigo).selectedIndex = convNro(dato).toLocaleString('en');
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
+    }
+    document.getElementById("analista").disabled = true;
+}
+function CompletarFEN(lista) {
+    var codigos = lista[0];
+    var data = lista[1];
+    for (var i = 0; i < codigos.length; i++) {
+        document.getElementById(codigos[i]).value = data[i];
+        document.getElementById(codigos[i]).innerHTML = data[i];
+    }
+}
+function CompletarIngresos(lista) {
+    var cantidad = lista[0];
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 1; i < cantidad; i++) {
+        AgregarProducto();
+    }
+    for (var i = 0; i < codigos.length; i++) {
+        etiquetas.push(codigos[i]);
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("unidades_x_presentacion_") != -1) {
+            var index = 0;
+            if (dato == "Galones") {
+                index = 1;
+            } else if (dato == "Kilos") {
+                index = 2;
+            } else if (dato == "Litros") {
+                index = 3;
+            } else if (dato == "Metros") {
+                index = 4;
+            } else if (dato == "Pies") {
+                index = 5;
+            } else if (dato == "Rollos") {
+                index = 6;
+            } else if (dato == "Sacos") {
+                index = 7;
+            } else if (dato == "Otros") {
+                index = 8;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("util_bruta_") != -1) {
+            document.getElementById(codigo).value = Number(data[i]).toFixed(2);
+            document.getElementById(codigo).innerHTML = Number(data[i]).toFixed(2);
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
+    }
+}
+function CompletarEgresos(lista) {
+    var codigos = lista[0];
+    var data = lista[1];
+    for (var i = 0; i < codigos.length; i++) {
+        document.getElementById(codigos[i]).value = data[i];
+        document.getElementById(codigos[i]).innerHTML = data[i];
+    }
+}
+function CompletarPI(lista) {
+    var cantidad = lista[0];
+    for (var i = 1; i < cantidad; i++) {
+        AgregarPatrimonio1();
+    }
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 0; i < codigos.length; i++) {
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("Realizable_") != -1) {
+            var index = 0;
+            if (dato == "Si") {
+                index = 1;
+            } else if (dato == "No") {
+                index = 2;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
+    }
+}
+function CompletarPVM(lista) {
+    var cantidad = lista[0];
+    for (var i = 1; i < cantidad; i++) {
+        AgregarPatrimonio2();
+    }
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 0; i < codigos.length; i++) {
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("Veh_Maq_") != -1) {
+            var index = 0;
+            if (dato == "Vehiculo") {
+                index = 1;
+            } else if (dato == "Maquinaria") {
+                index = 2;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
+    }
 }
