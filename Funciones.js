@@ -2366,18 +2366,31 @@ function InformacionGrabar() {
         return listaTodo;
     }
 }
-function Finalizar() {
-    Dictaminar();
-    var idFila = document.getElementById("idFila").value;
-    var lista = enviarInformacion();
-    if (lista != null) {
-        var enviar = [idFila, lista];
-        var dictamen = document.getElementById('dictamen').value;
-        alert(dictamen + " Por favor, imprime o guarda el formato.");
-        document.getElementById('seccion_sancion').style.display='';
-        //google.script.run.withSuccessHandler(actualizarIDFila).Finalizar(enviar);
-        Descargar_Todo();
-        location.replace('https://script.google.com/a/macros/bbva.com/s/AKfycbzqUUDIXsefCDt6tBk1YjEjFVzeHn_3Bc9xxxN_PEKu3_N-LeU/exec');
+function InformacionFinalizar() {
+    var listaTodo = [];
+    var lista = [];
+    var DC = getDatosCliente1();
+    if (DC != null) {
+        lista.push(DC);
+        var BG = getBalanceGeneral();
+        lista.push(BG);
+        var ER = getEstadoResultados();
+        lista.push(ER);
+        var C = getCanalizacion();
+        lista.push(C);
+        var R = getRatios();
+        lista.push(R);
+        Dictaminar();
+        var dictamen = document.getElementById("dictamen").value;
+        lista.push(dictamen);
+        listaTodo.push(lista);
+        listaTodo.push(getIngresos());
+        listaTodo.push(getEgresos());
+        listaTodo.push(getPatrimonioInmueble());
+        listaTodo.push(getPatrimonioVehMaq());
+        listaTodo.push(getFEN());
+        alert(dictamen);
+        return listaTodo;
     }
 }
 function getFEN(){
