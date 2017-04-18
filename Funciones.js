@@ -2453,7 +2453,6 @@ function CompletarGeneral(lista) {
         } else if (codigo.indexOf("egp_uneta") != -1 || codigo.indexOf("egp_gastfinan") != -1) {
             document.getElementById(codigo).selectedIndex = convNro(dato).toLocaleString('en');
         } else {
-            alert(data[i] + "--"+codigo)
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
