@@ -49,7 +49,7 @@ function Validar(lista){
         document.getElementById("celular").value = lista[13];
         document.getElementById("responsable").value = lista[14];
         document.getElementById("correo").value = lista[15];
-        document.getElementById("finalizado").value = lista[22];
+        document.getElementById("finalizado").value = lista[20];
         
         var mensaje = "";
         if(lista[16] != ""){
