@@ -50,7 +50,10 @@ function Validar(lista){
         document.getElementById("responsable").value = lista[14];
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
-        
+        if(lista[20] == 1){
+            var bloqueo = documen.getElementById("bloqueo");
+            bloqueo.disabled = true;
+        }
         var mensaje = "";
         if(lista[16] != ""){
             mensaje = lista[16] + "\n";
