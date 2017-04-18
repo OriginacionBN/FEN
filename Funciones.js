@@ -2426,9 +2426,9 @@ function CompletarInforme(datos){
     var egr = datos[4];
     CompletarEgresos(egr);
     var patInm = datos[5];
-    CompletarPI(patInm):
+    CompletarPI(patInm);
     var patVeh = datos[6];
-    CompletarPVM(patVeh):
+    CompletarPVM(patVeh);
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
