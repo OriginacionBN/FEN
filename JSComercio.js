@@ -37,7 +37,7 @@ function getDatosCliente1() {
     lista.push(edadRL);
     if (edadRL < 18) {
         alert("El representante legal debe ser mayor de edad");
-	return null;
+    return null;
     }
     return lista;
 }
@@ -92,7 +92,9 @@ function getDatosCliente() {
 }
 function getIngresos(){
     var lista = [];
-        lista.push(document.getElementById("util_bruta_Total").value);
+    lista.push(document.getElementById("vtas_enero").value);
+    lista.push(document.getElementById("vtas_febrero").value);
+    lista.push(document.getElementById("util_bruta_Total").value);
     lista.push(document.getElementById("ventas_x_prod_Total").value);
     lista.push(document.getElementById("vtas_comercio_base").value);
     lista.push(document.getElementById("margen_bruto").value);
