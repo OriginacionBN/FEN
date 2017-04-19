@@ -70,7 +70,8 @@ function Validar(lista){
             var datos = lista[24];
             var dc = datos[0];
             CompletarGeneral(dc);
-
+            var fen = datos[1];
+            CompletarFEN(fen);
         }
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
@@ -2472,8 +2473,73 @@ function CompletarFEN(lista) {
     var codigos = lista[0];
     var data = lista[1];
     for (var i = 0; i < codigos.length; i++) {
-        document.getElementById(codigos[i]).value = data[i];
-        document.getElementById(codigos[i]).innerHTML = data[i];
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("preg2") != -1) {
+            var index = 0;
+            if (dato == "Operativa") {
+                index = 1;
+                document.getElementById('optInf').style.display = '';
+                document.getElementById('optOpe').style.display = 'none';
+            } else if (dato == "Infraestructura") {
+                index = 2;
+                document.getElementById('optInf').style.display = 'none';
+                document.getElementById('optOpe').style.display = '';
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("optInfS") != -1) {
+            var index = 0;
+            if (dato == "Pérdida Total (Pérdida de taller, local comercial, Planta)") {
+                index = 1;
+            } else if (dato == "Pérdida Parcial (Pérdida de maquinaria)") {
+                index = 2;
+            } else if (dato == "Pérdida Personal (Pérdida de vivienda) "){
+                index = 3;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("optOpeS") != -1) {
+            var index = 0;
+            if (dato == "Perdida de Inventarios") {
+                index = 1;
+            } else if (dato == "Desabastecimiento (Materia Prima, Maquila, Proveedores)") {
+                index = 2;
+            } else if (dato == "Reducción de Ventas (perdidas de clientes)"){
+                index = 3;
+            } else if (dato == "Problemas de accesibilidad") {
+                index = 4;
+            } else if (dato == "Problemas de Cobranza"){
+                index = 5;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("preg4") != -1) {
+            var index = 0;
+            if (dato == "Si") {
+                index = 1;
+                document.getElementById('optSi').style.display = '';
+            } else if (dato == "No") {
+                index = 2;
+                document.getElementById('optSi').style.display = 'none';
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("Seguro") != -1) {
+            var index = 0;
+            if (dato == "Rimac") {
+                index = 1;
+            } else if (dato == "Pacifico") {
+                index = 2;
+            } else if (dato == "Mafre") {
+                index = 3;
+            } else if (dato == "La Positiva") {
+                index = 4;
+            } else if (dato == "Otra") {
+                index = 5;
+                document.getElementById('EspSeguro').style.display = '';
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        } else {
+            document.getElementById(codigo).value = dato;
+            document.getElementById(codigo).innerHTML = dato;
+        }
     }
 }
 function CompletarIngresos(lista) {
