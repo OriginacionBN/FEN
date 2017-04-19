@@ -96,7 +96,7 @@ function getIngresos(){
     lista.push(document.getElementById("vtas_febrero").value);
     lista.push(document.getElementById("util_bruta_Total").value);
     lista.push(document.getElementById("ventas_x_prod_Total").value);
-    lista.push(document.getElementById("vtas_comercio_base").value);
+    lista.push(document.getElementById("Ventas_Total").value);
     lista.push(document.getElementById("margen_bruto").value);
     lista.push(document.getElementById("margen_bruto_referencial").value);
     lista.push(document.getElementById("declarado").value);
@@ -204,8 +204,8 @@ function calcular_ventas_prod_Total() {
         var ventas_x_prod = pventa * unidades_vendidas;
         ventas_x_prod_Total += ventas_x_prod;
     }
-    document.getElementById("vtas_comercio_base").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
-    document.getElementById("vtas_comercio_base").value = ventas_x_prod_Total;
+    document.getElementById("Ventas_Total").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
+    document.getElementById("Ventas_Total").value = ventas_x_prod_Total;
     document.getElementById("ventas_x_prod_Total").innerHTML = Number(ventas_x_prod_Total).toLocaleString('en');
     document.getElementById("ventas_x_prod_Total").value = ventas_x_prod_Total;
 
@@ -241,7 +241,7 @@ function calcular_util_bruta_Total() {
 }
 function calcular_informalidad() {
     var declarado = convNro(document.getElementById("declarado").value);
-    var real = convNro(document.getElementById("vtas_comercio_base").value);
+    var real = convNro(document.getElementById("Ventas_Total").value);
     if (real > 0) {
         var informalidad = Number((1 - declarado / real) * 100).toFixed();
         document.getElementById("informalidad").innerHTML = informalidad + "%";
@@ -266,18 +266,18 @@ function calcular_Margen_Utilidad_Bruta() {
         var unidades_vendidas = convNro(document.getElementById("unidades_vendidas_" + idx).value);
         margen_utilidad_bruta += pcompra * unidades_vendidas;
     }
-    var vtas_comercio_base = convNro(document.getElementById("vtas_comercio_base").value);
-    if (vtas_comercio_base != 0) {
-        margen_utilidad_bruta = (1 - (convNro(margen_utilidad_bruta) / vtas_comercio_base)) * 100;
+    var Ventas_Total = convNro(document.getElementById("Ventas_Total").value);
+    if (Ventas_Total != 0) {
+        margen_utilidad_bruta = (1 - (convNro(margen_utilidad_bruta) / Ventas_Total)) * 100;
         document.getElementById("margen_bruto").innerHTML = Number(margen_utilidad_bruta).toFixed() + "%";
         document.getElementById("margen_bruto").value = Number(margen_utilidad_bruta).toFixed();
     }
     var margen_bruto_referencial = convNro(document.getElementById("margen_bruto_referencial").value);
     var egp_costoven = 0;
     if (margen_utilidad_bruta > margen_bruto_referencial) {
-        egp_costoven = (100 - margen_bruto_referencial) * vtas_comercio_base / 100;
+        egp_costoven = (100 - margen_bruto_referencial) * Ventas_Total / 100;
     } else {
-        egp_costoven = (100 - margen_utilidad_bruta) * vtas_comercio_base / 100;
+        egp_costoven = (100 - margen_utilidad_bruta) * Ventas_Total / 100;
     }
     document.getElementById("egp_costoven").innerHTML = Number(Number(egp_costoven).toFixed()).toLocaleString('en');
 
