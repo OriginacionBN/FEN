@@ -517,3 +517,34 @@ function getCosto2(){
     }
     return lista;
 }
+
+function CompletarIngresos(lista) {
+    var cantidad = lista[0];
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 1; i < cantidad; i++) {
+        AgregarServicios();
+    }
+    for (var i = 0; i < codigos.length; i++) {
+        var codigo = codigos[i];
+        var dato = data[i];
+        document.getElementById(codigo).value = data[i];
+        document.getElementById(codigo).innerHTML = data[i];
+    }
+}
+function CompletarEgresos(lista) {
+    var cant1 = lista[0];
+    var cant2 = lista[1];
+    var codigos = lista[2];
+    var data = lista[3];
+    for (var i = 1; i < cant1; i++) {
+        AgregarInsumo();
+    }
+    for (var i = 1; i < cant2; i++) {
+        AgregarTercerizado();
+    }
+    for (var i = 0; i < codigos.length; i++) {
+        document.getElementById(codigos[i]).value = data[i];
+        document.getElementById(codigos[i]).innerHTML = data[i];
+    }
+}
