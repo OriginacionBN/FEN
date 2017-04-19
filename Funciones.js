@@ -36,7 +36,6 @@ function Validar(lista){
         document.getElementById("tipoCliente").disabled = false;
         document.getElementById("oficina").disabled = false;
 
-        //Completar Datos generales y volver a bloquear
         document.getElementById("idFila").value = lista[1];
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("razonSocial").value = lista[3];
@@ -52,12 +51,6 @@ function Validar(lista){
         document.getElementById("correo").value = lista[15];
         document.getElementById("finalizado").value = lista[20];
 
-        
-
-        if(lista[20] == 1){
-            var bloqueo = document.getElementById("bloqueo");
-            bloqueo.disabled = true;
-        }
         var mensaje = "";
         if(lista[16] != ""){
             mensaje = lista[16] + "\n";
@@ -71,13 +64,22 @@ function Validar(lista){
         if(lista[19] != ""){
             mensaje = mensaje + lista[19] + "\n";
         }
+        var deudas = lista[23];
+        CompletarCronograma(deudas);
         
-        document.getElementById("nroEnt").disabled = true;
-        document.getElementById("buro").disabled = true;
-        document.getElementById("aExp").disabled = true;
-        document.getElementById("tipoCliente").disabled = true;
-        document.getElementById("oficina").disabled = true;
-        document.getElementById("ruc").disabled = true;
+        if(lista[20] == 1){
+            var bloqueo = document.getElementById("bloqueo");
+            bloqueo.disabled = true;
+        }else if(lista[20] == 0){
+            //Completar con info previamente guardada
+        }else{
+            document.getElementById("nroEnt").disabled = true;
+            document.getElementById("buro").disabled = true;
+            document.getElementById("aExp").disabled = true;
+            document.getElementById("tipoCliente").disabled = true;
+            document.getElementById("oficina").disabled = true;
+            document.getElementById("ruc").disabled = true;
+        }
         if(mensaje != ""){
             alert(mensaje);
         }
