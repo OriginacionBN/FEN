@@ -103,7 +103,9 @@ function Validar(lista){
         document.getElementById("carga").style.display = 'none';
     }
 }
+var actividadG = [];
 function InicializarActividad(actividad){
+    actividadG = actividad;
     document.getElementById("actividad").disabled = false;
     document.getElementById("actividad").options[0] = new Option("");
     for (i = 0; i < actividad.length; i++) {
@@ -2437,10 +2439,7 @@ function getFEN(){
     lista.push(document.getElementById("preg5").value);
     return lista;
 }
-function CompletarInforme(datos){
-    
-    //
-}
+
 function CompletarGeneral(lista) {
     var codigos = lista[0];
     var data = lista[1];
@@ -2457,12 +2456,13 @@ function CompletarGeneral(lista) {
                 index = 3;
             }
             document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("buro") != -1) {
-            
         } else if (codigo.indexOf("actividad") != -1) {
-            document.getElementById(codigo).selectedIndex = dato;
+            var index = 0;
+            alert(actividadG);
+            document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("egp_uneta") != -1 || codigo.indexOf("egp_gastfinan") != -1) {
-            document.getElementById(codigo).selectedIndex = convNro(dato).toLocaleString('en');
+            document.getElementById(codigo).value = convNro(dato).toLocaleString('en');
+            document.getElementById(codigo).innerHTML = convNro(dato).toLocaleString('en');
         } else {
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
