@@ -2470,7 +2470,6 @@ function CompletarGeneral(lista) {
     document.getElementById("analista").disabled = true;
 }
 function CompletarFEN(lista) {
-    alert(lista);
     var codigos = lista[0];
     var data = lista[1];
     for (var i = 0; i < codigos.length; i++) {
@@ -2484,6 +2483,9 @@ function CompletarFEN(lista) {
                 index = 2;
             }
             document.getElementById(codigo).selectedIndex = index;
+        }else if (codigo.indexOf("preg2Comen") != -1) {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
         }else if (codigo.indexOf("preg2") != -1) {
             var index = 0;
             if (dato == "Operativa") {
@@ -2496,7 +2498,7 @@ function CompletarFEN(lista) {
                 document.getElementById('optOpe').style.display = 'none';
             }
             document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("optInfS") != -1) {
+        }  else if (codigo.indexOf("optInfS") != -1) {
             var index = 0;
             if (dato == "Pérdida Total (Pérdida de taller, local comercial, Planta)") {
                 index = 1;
@@ -2544,7 +2546,10 @@ function CompletarFEN(lista) {
                 document.getElementById('optSi').style.display = 'none';
             }
             document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("Seguro") != -1) {
+        } else if (codigo.indexOf("EspSeguro") != -1) {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }  else if (codigo.indexOf("Seguro") != -1) {
             var index = 0;
             if (dato == "Rimac") {
                 index = 1;
