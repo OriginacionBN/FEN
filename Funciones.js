@@ -72,6 +72,10 @@ function Validar(lista){
             CompletarGeneral(dc);
             var fen = datos[1];
             CompletarFEN(fen);
+            var patInm = datos[2];
+            CompletarPI(patInm);
+            var patVeh = datos[3];
+            CompletarPVM(patVeh);
         }
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
@@ -2426,10 +2430,6 @@ function getFEN(){
     return lista;
 }
 function CompletarInforme(datos){
-    var dc = datos[1];
-    CompletarGeneral(dc);
-    //var fen = datos[2];
-    //CompletarFEN(fen);
     //var ing = datos[3];
     //CompletarIngresos(ing);
     //var egr = datos[4];
