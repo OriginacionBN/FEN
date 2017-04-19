@@ -9,7 +9,6 @@ function Inicializar() {
 }
 function Validar(lista){
     if(lista[1] !=0){
-        //CompletarInforme(lista[30]);
         document.getElementById("validado").style.display = '';
         document.getElementById("btn_grabar").style.display = '';
         document.getElementById("boton_finalizar").style.display = '';
@@ -66,12 +65,16 @@ function Validar(lista){
         }
         var deudas = lista[23];
         CompletarCronograma(deudas);
-        
+
+        if(lista[20] == 0 || lista[20] == 1){
+            var datos = lista[24]
+            var dc = datos[0];
+            CompletarGeneral(dc);
+
+        }
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
-        }else if(lista[20] == 0){
-            //Completar con info previamente guardada
         }else{
             document.getElementById("nroEnt").disabled = true;
             document.getElementById("buro").disabled = true;
