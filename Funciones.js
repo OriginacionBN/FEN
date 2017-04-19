@@ -2576,55 +2576,6 @@ function CompletarFEN(lista) {
         }
     }
 }
-function CompletarIngresos(lista) {
-    var cantidad = lista[0];
-    var codigos = lista[1];
-    var data = lista[2];
-    for (var i = 1; i < cantidad; i++) {
-        AgregarProducto();
-    }
-    for (var i = 0; i < codigos.length; i++) {
-        var codigo = codigos[i];
-        var dato = data[i];
-        if (codigo.indexOf("unidades_x_presentacion_") != -1) {
-            var index = 0;
-            if (dato == "Galones") {
-                index = 1;
-            } else if (dato == "Kilos") {
-                index = 2;
-            } else if (dato == "Litros") {
-                index = 3;
-            } else if (dato == "Metros") {
-                index = 4;
-            } else if (dato == "Pies") {
-                index = 5;
-            } else if (dato == "Rollos") {
-                index = 6;
-            } else if (dato == "Sacos") {
-                index = 7;
-            } else if (dato == "Otros") {
-                index = 8;
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("util_bruta_") != -1) {
-            document.getElementById(codigo).value = Number(data[i]).toFixed(2);
-            document.getElementById(codigo).innerHTML = Number(data[i]).toFixed(2);
-        } else {
-            document.getElementById(codigo).value = data[i];
-            document.getElementById(codigo).innerHTML = data[i];
-        }
-    }
-    calcular_ingresos_comercio();
-}
-function CompletarEgresos(lista) {
-    var codigos = lista[0];
-    var data = lista[1];
-    for (var i = 0; i < codigos.length; i++) {
-        document.getElementById(codigos[i]).value = data[i];
-        document.getElementById(codigos[i]).innerHTML = data[i];
-    }
-    calcular_gastop_comercio();
-}
 function CompletarPI(lista) {
     var cantidad = lista[0];
     for (var i = 1; i < cantidad; i++) {
