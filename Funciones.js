@@ -78,6 +78,8 @@ function Validar(lista){
             CompletarPVM(patVeh);
             var ing = datos[4];
             CompletarIngresos(ing);
+            var egr = datos[5];
+            CompletarEgresos(egr);
             calcular_valor_declarado_Total();
             Calcular_Valor_Bien_Total();
         }
@@ -2435,8 +2437,7 @@ function getFEN(){
 }
 function CompletarInforme(datos){
     
-    //var egr = datos[4];
-    //CompletarEgresos(egr);
+    //
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
@@ -2602,11 +2603,11 @@ function CompletarIngresos(lista) {
             document.getElementById(codigo).value = Number(data[i]).toFixed(2);
             document.getElementById(codigo).innerHTML = Number(data[i]).toFixed(2);
         } else {
-            alert(codigo);
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
     }
+    calcular_ingresos_comercio();
 }
 function CompletarEgresos(lista) {
     var codigos = lista[0];
@@ -2615,6 +2616,7 @@ function CompletarEgresos(lista) {
         document.getElementById(codigos[i]).value = data[i];
         document.getElementById(codigos[i]).innerHTML = data[i];
     }
+    calcular_gastop_comercio();
 }
 function CompletarPI(lista) {
     var cantidad = lista[0];
