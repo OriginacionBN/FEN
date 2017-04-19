@@ -2559,6 +2559,7 @@ function CompletarFEN(lista) {
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
+            alert(codigo + "--" + dato)
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
