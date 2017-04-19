@@ -2569,9 +2569,7 @@ function CompletarFEN(lista) {
     }
 }
 function CompletarIngresos(lista) {
-    alert(lista)
     var cantidad = lista[0];
-
     var codigos = lista[1];
     var data = lista[2];
     for (var i = 1; i < cantidad; i++) {
