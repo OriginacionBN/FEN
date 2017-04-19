@@ -544,6 +544,7 @@ function CompletarEgresos(lista) {
         AgregarTercerizado();
     }
     for (var i = 0; i < codigos.length; i++) {
+        alert(codigos[i] + "--" + data[i]);
         document.getElementById(codigos[i]).value = data[i];
         document.getElementById(codigos[i]).innerHTML = data[i];
     }
