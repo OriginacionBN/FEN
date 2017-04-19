@@ -537,10 +537,10 @@ function CompletarEgresos(lista) {
     var cant2 = lista[1];
     var codigos = lista[2];
     var data = lista[3];
-    for (var i = 1; i < (cant1+2); i++) {
+    for (var i = 0; i < cant1; i++) {
         AgregarInsumo();
     }
-    for (var i = 1; i < (cant2+2); i++) {
+    for (var i = 0; i < cant2; i++) {
         AgregarTercerizado();
     }
     for (var i = 0; i < codigos.length; i++) {
