@@ -76,7 +76,8 @@ function Validar(lista){
             CompletarPI(patInm);
             var patVeh = datos[3];
             CompletarPVM(patVeh);
-
+            var ing = datos[4];
+            CompletarIngresos(ing);
             calcular_valor_declarado_Total();
             Calcular_Valor_Bien_Total();
         }
@@ -2433,15 +2434,9 @@ function getFEN(){
     return lista;
 }
 function CompletarInforme(datos){
-    //var ing = datos[3];
-    //CompletarIngresos(ing);
+    
     //var egr = datos[4];
     //CompletarEgresos(egr);
-    var patInm = datos[5];
-    CompletarPI(patInm);
-    var patVeh = datos[6];
-    CompletarPVM(patVeh);
-    Calcular_EEFF();
 }
 function CompletarGeneral(lista) {
     var codigos = lista[0];
