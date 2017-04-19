@@ -2619,6 +2619,7 @@ function CompletarEgresos(lista) {
     }
 }
 function CompletarPI(lista) {
+    alert(lista)
     var cantidad = lista[0];
     for (var i = 1; i < cantidad; i++) {
         AgregarPatrimonio1();
