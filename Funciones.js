@@ -67,7 +67,8 @@ function Validar(lista){
         CompletarCronograma(deudas);
 
         if(lista[20] == 0 || lista[20] == 1){
-            var datos = lista[24]
+            alert(lista[24]);
+            var datos = lista[24];
             var dc = datos[0];
             CompletarGeneral(dc);
 
