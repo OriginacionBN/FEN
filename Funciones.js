@@ -103,7 +103,6 @@ function Validar(lista){
         document.getElementById("carga").style.display = 'none';
     }
 }
-var actividadG = [];
 function InicializarActividad(actividad){
     actividadG = actividad;
     document.getElementById("actividad").disabled = false;
