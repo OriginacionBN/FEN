@@ -2487,12 +2487,12 @@ function CompletarFEN(lista) {
             var index = 0;
             if (dato == "Operativa") {
                 index = 1;
-                document.getElementById('optInf').style.display = '';
-                document.getElementById('optOpe').style.display = 'none';
-            } else if (dato == "Infraestructura") {
-                index = 2;
                 document.getElementById('optInf').style.display = 'none';
                 document.getElementById('optOpe').style.display = '';
+            } else if (dato == "Infraestructura") {
+                index = 2;
+                document.getElementById('optInf').style.display = '';
+                document.getElementById('optOpe').style.display = 'none';
             }
             document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("optInfS") != -1) {
@@ -2519,6 +2519,20 @@ function CompletarFEN(lista) {
                 index = 5;
             }
             document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("preg3") != -1) {
+            var index = 0;
+            if (dato == "Entre 3 a 6 meses") {
+                index = 1;
+            } else if (dato == "En un año") {
+                index = 2;
+            } else if (dato == "En dos años") {
+                index = 3;
+            } else if (dato == "Más de dos años.") {
+                index = 4;
+            } else if (dato == "No habrá recuperación de flujos por perdida total.") {
+                index = 5;
+            }
+            document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("preg4") != -1) {
             var index = 0;
             if (dato == "Si") {
@@ -2541,7 +2555,7 @@ function CompletarFEN(lista) {
                 index = 4;
             } else if (dato == "Otra") {
                 index = 5;
-                document.getElementById('EspSeguro').style.display = '';
+                document.getElementById('optOtra').style.display = '';
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
