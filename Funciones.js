@@ -2457,9 +2457,8 @@ function CompletarGeneral(lista) {
             document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("actividad") != -1) {
             var index = 0;
-            alert(dato);
             index = actividadG.indexOf(dato);
-            alert(index);
+            index = index +1;
             document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("egp_uneta") != -1 || codigo.indexOf("egp_gastfinan") != -1) {
             document.getElementById(codigo).value = convNro(dato).toLocaleString('en');
