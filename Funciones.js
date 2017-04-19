@@ -76,6 +76,9 @@ function Validar(lista){
             CompletarPI(patInm);
             var patVeh = datos[3];
             CompletarPVM(patVeh);
+
+            calcular_valor_declarado_Total();
+            Calcular_Valor_Bien_Total();
         }
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
@@ -2619,7 +2622,6 @@ function CompletarEgresos(lista) {
     }
 }
 function CompletarPI(lista) {
-    alert(lista)
     var cantidad = lista[0];
     for (var i = 1; i < cantidad; i++) {
         AgregarPatrimonio1();
