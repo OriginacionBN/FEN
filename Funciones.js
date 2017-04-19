@@ -2475,7 +2475,15 @@ function CompletarFEN(lista) {
     for (var i = 0; i < codigos.length; i++) {
         var codigo = codigos[i];
         var dato = data[i];
-        if (codigo.indexOf("preg2") != -1) {
+        if (codigo.indexOf("preg1") != -1) {
+            var index = 0;
+            if (dato == "Si") {
+                index = 1;
+            } else if (dato == "No") {
+                index = 2;
+            }
+            document.getElementById(codigo).selectedIndex = index;
+        }else if (codigo.indexOf("preg2") != -1) {
             var index = 0;
             if (dato == "Operativa") {
                 index = 1;
