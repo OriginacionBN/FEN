@@ -150,6 +150,7 @@ function EvaluarFiltros1(){
 }
 function Preg1(){
     var seleccion = document.getElementById("preg1").value;
+    var responsable = document.getElementById("responsable").value;
     if(seleccion == "Si"){
         document.getElementById("seccion_ingresos").style.display = '';
         document.getElementById("seccion_egresos").style.display = '';
@@ -159,7 +160,7 @@ function Preg1(){
         document.getElementById("s_egresos").style.display = '';
         document.getElementById("s_patrimonio").style.display = '';
         document.getElementById("s_estados").style.display = '';
-    }else{
+    }else if(seleccion == "No" && responsable != "Admisión"){
         document.getElementById("seccion_ingresos").style.display = 'none';
         document.getElementById("seccion_egresos").style.display = 'none';
         document.getElementById("seccion_patrimonio").style.display = 'none';
