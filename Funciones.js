@@ -104,10 +104,12 @@ function Validar(lista){
     }
 }
 function InicializarActividad(actividad){
+    document.getElementById("actividad").disabled = false;
     document.getElementById("actividad").options[0] = new Option("");
     for (i = 0; i < actividad.length; i++) {
         document.getElementById("actividad").options[i + 1] = new Option(actividad[i], actividad[i]);
     }
+    document.getElementById("actividad").disabled = true;
 }
 function Cargar(){
     document.getElementById("carga").style.display = '';
