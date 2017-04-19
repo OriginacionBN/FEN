@@ -1821,6 +1821,7 @@ function AgregarPrestamoAdquisicion() {
 function Calcular_Prestamo_Adquisicion(idx) {
     var PA_Mes_Anterior = convNro(document.getElementById("PA_Mes_Anterior_" + idx).value);
     var PA_Mes_Actual = convNro(document.getElementById("PA_Mes_Actual_" + idx).value);
+    var PA_DIFF = convNro(document.getElementById("PA_DIFF").value);
 
     var PA_Amort_Capital = PA_Mes_Anterior - PA_Mes_Actual;
     document.getElementById("PA_Amort_Capital_" + idx).innerHTML = Number(PA_Amort_Capital).toLocaleString('en');
@@ -1833,7 +1834,7 @@ function Calcular_Prestamo_Adquisicion(idx) {
     document.getElementById("PA_Costo_Financiero_" + idx).value = PA_Costo_Financiero;
     PA_Amort_Capital = Number(PA_Amort_Capital);
     PA_Costo_Financiero = Number(PA_Costo_Financiero);
-    var PA_Cuota_Pagar_Aprox = PA_Amort_Capital + PA_Costo_Financiero;
+    var PA_Cuota_Pagar_Aprox = PA_Amort_Capital + PA_Costo_Financiero + PA_DIFF;
     PA_Cuota_Pagar_Aprox = Number(PA_Cuota_Pagar_Aprox).toFixed(0);
     document.getElementById("PA_Cuota_Pagar_Aprox_" + idx).innerHTML = Number(PA_Cuota_Pagar_Aprox).toLocaleString('en');
     document.getElementById("PA_Cuota_Pagar_Aprox_" + idx).value = PA_Cuota_Pagar_Aprox;
@@ -1891,12 +1892,16 @@ function Calcular_Prestamo_Personal(idx) {
     var producto = document.getElementById("PP_Producto_" + idx).value;
     if (producto != 0) {
         var TEA = 0;
+        var PP_DIFF = 0;
         if (producto == 1) {
             TEA = TEAPPVehicular;
+            PP_DIFF = PP_V_DIFF;
         } else if (producto == 2) {
             TEA = TEAPPHipotecario;
+            PP_DIFF = PP_H_DIFF;
         } else if (producto == 3) {
             TEA = TEAPPLibre;
+            PP_DIFF = PP_LD_DIFF;
         }
         var TEM = retornarTEM(TEA);
         document.getElementById("PP_TEM_" + idx).value = TEM;
@@ -1920,7 +1925,7 @@ function Calcular_Prestamo_Personal(idx) {
         document.getElementById("PP_Costo_Financiero_" + idx).value = PP_Costo_Financiero;
         PP_Amort_Capital = Number(PP_Amort_Capital);
         PP_Costo_Financiero = Number(PP_Costo_Financiero);
-        var PP_Cuota_Pagar_Aprox = PP_Amort_Capital + PP_Costo_Financiero;
+        var PP_Cuota_Pagar_Aprox = PP_Amort_Capital + PP_Costo_Financiero + PP_DIFF;
         PP_Cuota_Pagar_Aprox = Number(PP_Cuota_Pagar_Aprox).toFixed(0);
         document.getElementById("PP_Cuota_Pagar_Aprox_" + idx).innerHTML = Number(PP_Cuota_Pagar_Aprox).toLocaleString('en');
         document.getElementById("PP_Cuota_Pagar_Aprox_" + idx).value = PP_Cuota_Pagar_Aprox;
