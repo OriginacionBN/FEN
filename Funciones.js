@@ -2470,6 +2470,7 @@ function CompletarGeneral(lista) {
     document.getElementById("analista").disabled = true;
 }
 function CompletarFEN(lista) {
+    alert(lista);
     var codigos = lista[0];
     var data = lista[1];
     for (var i = 0; i < codigos.length; i++) {
@@ -2559,7 +2560,6 @@ function CompletarFEN(lista) {
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
-            alert(codigo + "--" + dato)
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
