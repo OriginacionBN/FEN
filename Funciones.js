@@ -2559,8 +2559,8 @@ function CompletarFEN(lista) {
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
-            document.getElementById(codigo).value = dato;
-            document.getElementById(codigo).innerHTML = dato;
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
         }
     }
 }
