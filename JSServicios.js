@@ -440,6 +440,7 @@ function CompletarIngresos(lista) {
         document.getElementById(codigo).value = data[i];
         document.getElementById(codigo).innerHTML = data[i];
     }
+    Calcular_Ingreso_Manufactura();
 }
 function CompletarEgresos(lista) {
     var codigos = lista[0];
@@ -448,4 +449,6 @@ function CompletarEgresos(lista) {
         document.getElementById(codigos[i]).value = data[i];
         document.getElementById(codigos[i]).innerHTML = data[i];
     }
+    calcular_gastop_comercio();
+    Calcular_Costo_Venta();
 }
