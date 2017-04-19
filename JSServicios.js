@@ -22,6 +22,8 @@ function getDatosCliente1() {
     lista.push(aExp);
     var nroPtosVta = (document.getElementById('nroPtosVta').value);
     lista.push(nroPtosVta);
+    lista.push("");
+    lista.push("");
     var actividad = document.getElementById('actividad').value;
     lista.push(actividad);
     var actEspecifica = document.getElementById('actEspecifica').value;
@@ -425,3 +427,25 @@ function getEgresos(){
 
     return lista;
 }   
+function CompletarIngresos(lista) {
+    var cantidad = lista[0];
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 0; i < cantidad; i++) {
+        AgregarServicios();
+    }
+    for (var i = 0; i < codigos.length; i++) {
+        var codigo = codigos[i];
+        var dato = data[i];
+        document.getElementById(codigo).value = data[i];
+        document.getElementById(codigo).innerHTML = data[i];
+    }
+}
+function CompletarEgresos(lista) {
+    var codigos = lista[0];
+    var data = lista[1];
+    for (var i = 0; i < codigos.length; i++) {
+        document.getElementById(codigos[i]).value = data[i];
+        document.getElementById(codigos[i]).innerHTML = data[i];
+    }
+}
