@@ -426,7 +426,6 @@ function CompletarIngresos(lista) {
             document.getElementById(codigo).value = Number(data[i]).toFixed(2);
             document.getElementById(codigo).innerHTML = Number(data[i]).toFixed(2);
         } else {
-            alert(codigo);
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
