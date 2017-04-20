@@ -1835,7 +1835,8 @@ function Calcular_Prestamo_Adquisicion(idx) {
     document.getElementById("PA_Costo_Financiero_" + idx).value = PA_Costo_Financiero;
     PA_Amort_Capital = Number(PA_Amort_Capital);
     PA_Costo_Financiero = Number(PA_Costo_Financiero);
-    var PA_Cuota_Pagar_Aprox = PA_Amort_Capital + PA_Costo_Financiero + PA_DIFF;
+    var PA = Calcular_Cuota_Pagar(TEM, 72, Number(PA_DIFF))
+    var PA_Cuota_Pagar_Aprox = PA_Amort_Capital + PA_Costo_Financiero + PA;
     PA_Cuota_Pagar_Aprox = Number(PA_Cuota_Pagar_Aprox).toFixed(0);
     document.getElementById("PA_Cuota_Pagar_Aprox_" + idx).innerHTML = Number(PA_Cuota_Pagar_Aprox).toLocaleString('en');
     document.getElementById("PA_Cuota_Pagar_Aprox_" + idx).value = PA_Cuota_Pagar_Aprox;
@@ -1894,17 +1895,24 @@ function Calcular_Prestamo_Personal(idx) {
     if (producto != 0) {
         var TEA = 0;
         var PP_DIFF = 0;
+        
         if (producto == 1) {
             TEA = TEAPPVehicular;
-            PP_DIFF = PP_V_DIFF;
         } else if (producto == 2) {
             TEA = TEAPPHipotecario;
-            PP_DIFF = PP_H_DIFF;
         } else if (producto == 3) {
             TEA = TEAPPLibre;
-            PP_DIFF = PP_LD_DIFF;
         }
         var TEM = retornarTEM(TEA);
+        if (producto == 1) {
+            PP_DIFF = Calcular_Cuota_Pagar(TEM,48,Number(PP_V_DIFF));
+        } else if (producto == 2) {
+            PP_DIFF = Calcular_Cuota_Pagar(TEM,240,Number(PP_H_DIFF));
+        } else if (producto == 3) {
+            PP_DIFF = Calcular_Cuota_Pagar(TEM,36,Number(PP_LD_DIFF));
+        }
+
+
         document.getElementById("PP_TEM_" + idx).value = TEM;
         document.getElementById("PP_TEM_" + idx).innerHTML = Number(TEM * 100).toFixed(2) + "%";
 
