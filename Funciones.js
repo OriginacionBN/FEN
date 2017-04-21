@@ -1291,7 +1291,10 @@ function Calcular_Deuda_Financiera_LP() {
     var PA_S4 = 0;
     var M1 = 0;
     var M2 = 0; 
-
+    if(PA_filas >0){
+        M1 = convNro(document.getElementById("PA_Mes_Actual_0").value);
+        M2 = convNro(document.getElementById("PA_Mes_Anterior_0").value);
+    }
     // for (var idx = 0; idx < PA_filas; idx++) {
     //     PA_S4 = PA_S4 + convNro(document.getElementById("PA_Mes_Actual_" + idx).value);
     // }
@@ -1299,10 +1302,7 @@ function Calcular_Deuda_Financiera_LP() {
     var PA_DIFF = convNro(document.getElementById("PA_DIFF").value);
 
     if(PA_DIFF > 0){
-        if(PA_filas >0){
-            M1 = convNro(document.getElementById("PA_Mes_Actual_0").value);
-            M2 = convNro(document.getElementById("PA_Mes_Anterior_0").value);
-        }
+        
         if(M1 == 0 && M2 == 0){
             PA_S4 = PA_DIFF;
         }else if(M2 > M1){
