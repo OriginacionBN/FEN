@@ -1851,8 +1851,8 @@ function Calcular_Prestamo_Adquisicion(idx) {
     PA_Costo_Financiero = Number(PA_Costo_Financiero).toFixed(0);
     document.getElementById("PA_Costo_Financiero_" + idx).innerHTML = Number(PA_Costo_Financiero).toLocaleString('en');
     document.getElementById("PA_Costo_Financiero_" + idx).value = PA_Costo_Financiero;
-    PA_Amort_Capital = Number(PA_Amort_Capital);
-    PA_Costo_Financiero = Number(PA_Costo_Financiero);
+    PA_Amort_Capital = convNro(PA_Amort_Capital);
+    PA_Costo_Financiero = convNro(PA_Costo_Financiero);
     var PA = Calcular_Cuota_Pagar(TEM, 72, Number(PA_DIFF))
     var PA_Cuota_Pagar_Aprox = PA_Amort_Capital + PA_Costo_Financiero + PA;
     PA_Cuota_Pagar_Aprox = Number(PA_Cuota_Pagar_Aprox).toFixed(0);
