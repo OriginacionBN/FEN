@@ -95,7 +95,7 @@ function Validar(lista){
             Calcular_Valor_Bien_Total();
         }
         
-        
+        Calcular_EEFF();
         
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
