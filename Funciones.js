@@ -82,24 +82,24 @@ function Validar(lista){
             var dc = datos[0];
             CompletarGeneral(dc);
             var fen = datos[1];
-            CompletarFEN(fen);
+            //CompletarFEN(fen);
             var patInm = datos[2];
-            CompletarPI(patInm);
+            //CompletarPI(patInm);
             var patVeh = datos[3];
-            CompletarPVM(patVeh);
+            //CompletarPVM(patVeh);
             var ing = datos[4];
-            CompletarIngresos(ing);
+            //CompletarIngresos(ing);
             var egr = datos[5];
-            CompletarEgresos(egr);
-            calcular_valor_declarado_Total();
-            Calcular_Valor_Bien_Total();
+            //CompletarEgresos(egr);
+            //calcular_valor_declarado_Total();
+            //Calcular_Valor_Bien_Total();
         }
         
         
         
         if(lista[20] == 1){
-            var bloqueo = document.getElementById("bloqueo");
-            bloqueo.disabled = true;
+            //var bloqueo = document.getElementById("bloqueo");
+            //bloqueo.disabled = true;
         }else{
             document.getElementById("nroEnt").disabled = true;
             document.getElementById("buro").disabled = true;
