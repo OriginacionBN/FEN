@@ -2500,9 +2500,9 @@ function CompletarGeneral(lista) {
             document.getElementById(codigo).value = convNro(dato).toLocaleString('en');
             document.getElementById(codigo).innerHTML = convNro(dato).toLocaleString('en');
         } else {
-            alert(codigo);
-            document.getElementById(codigo).value = data[i];
-            document.getElementById(codigo).innerHTML = data[i];
+            alert(codigo + "***" + dato);
+            document.getElementById(codigo).value = dato;
+            document.getElementById(codigo).innerHTML = dato;
         }
     }
     document.getElementById("analista").disabled = true;
