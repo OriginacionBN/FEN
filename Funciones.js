@@ -75,10 +75,11 @@ function Validar(lista){
         document.getElementById("SRecomendacion").selectedIndex = index;
         
         var deudas = lista[24];
+        alert(lista[24]);
         CompletarCronograma(deudas);
 
         if(lista[20] == 0 || lista[20] == 1){
-            var datos = lista[24];
+            var datos = lista[25];
             var dc = datos[0];
             CompletarGeneral(dc);
             var fen = datos[1];
@@ -88,18 +89,18 @@ function Validar(lista){
             var patVeh = datos[3];
             CompletarPVM(patVeh);
             var ing = datos[4];
-            //CompletarIngresos(ing);
+            CompletarIngresos(ing);
             var egr = datos[5];
-            //CompletarEgresos(egr);
-            //calcular_valor_declarado_Total();
-            //Calcular_Valor_Bien_Total();
+            CompletarEgresos(egr);
+            calcular_valor_declarado_Total();
+            Calcular_Valor_Bien_Total();
         }
         
         
         
         if(lista[20] == 1){
-            //var bloqueo = document.getElementById("bloqueo");
-            //bloqueo.disabled = true;
+            var bloqueo = document.getElementById("bloqueo");
+            bloqueo.disabled = true;
         }else{
             document.getElementById("nroEnt").disabled = true;
             document.getElementById("buro").disabled = true;
