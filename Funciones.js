@@ -2643,3 +2643,19 @@ function CompletarPVM(lista) {
         }
     }
 }
+function Descargar(){
+    document.getElementById("seccion_datos_cliente").style.display = '';
+    document.getElementById("seccion_FEN1").style.display = '';
+    document.getElementById("seccion_ingresos").style.display = '';
+    document.getElementById("seccion_egresos").style.display = '';
+    document.getElementById("seccion_patrimonio").style.display = '';
+    document.getElementById("seccion_estados").style.display = '';
+    document.getElementById("seccion_FEN2").style.display = '';
+    window.print();
+    document.getElementById("seccion_FEN1").style.display = 'none';
+    document.getElementById("seccion_ingresos").style.display = 'none';
+    document.getElementById("seccion_egresos").style.display = 'none';
+    document.getElementById("seccion_patrimonio").style.display = 'none';
+    document.getElementById("seccion_estados").style.display = 'none';
+    document.getElementById("seccion_FEN2").style.display = 'none';
+}
