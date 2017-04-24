@@ -82,11 +82,11 @@ function Validar(lista){
             var dc = datos[0];
             CompletarGeneral(dc);
             var fen = datos[1];
-            //CompletarFEN(fen);
+            CompletarFEN(fen);
             var patInm = datos[2];
-            //CompletarPI(patInm);
+            CompletarPI(patInm);
             var patVeh = datos[3];
-            //CompletarPVM(patVeh);
+            CompletarPVM(patVeh);
             var ing = datos[4];
             //CompletarIngresos(ing);
             var egr = datos[5];
@@ -2502,7 +2502,6 @@ function CompletarGeneral(lista) {
             document.getElementById(codigo).value = convNro(dato).toLocaleString('en');
             document.getElementById(codigo).innerHTML = convNro(dato).toLocaleString('en');
         } else {
-            alert(codigo + "***" + dato);
             document.getElementById(codigo).value = dato;
             document.getElementById(codigo).innerHTML = dato;
         }
