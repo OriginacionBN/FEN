@@ -75,7 +75,6 @@ function Validar(lista){
         document.getElementById("SRecomendacion").selectedIndex = index;
         
         var deudas = lista[24];
-        alert(lista[24]);
         CompletarCronograma(deudas);
 
         if(lista[20] == 0 || lista[20] == 1){
