@@ -2500,6 +2500,7 @@ function CompletarGeneral(lista) {
             document.getElementById(codigo).value = convNro(dato).toLocaleString('en');
             document.getElementById(codigo).innerHTML = convNro(dato).toLocaleString('en');
         } else {
+            alert(codigo);
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
@@ -2602,7 +2603,6 @@ function CompletarFEN(lista) {
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
-            alert(codigo);
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
