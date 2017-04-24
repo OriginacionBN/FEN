@@ -74,6 +74,9 @@ function Validar(lista){
         }
         document.getElementById("SRecomendacion").selectedIndex = index;
         
+        var deudas = lista[24];
+        CompletarCronograma(deudas);
+
         if(lista[20] == 0 || lista[20] == 1){
             var datos = lista[24];
             var dc = datos[0];
@@ -92,8 +95,7 @@ function Validar(lista){
             Calcular_Valor_Bien_Total();
         }
         
-        var deudas = lista[24];
-        CompletarCronograma(deudas);
+        
         
         if(lista[20] == 1){
             var bloqueo = document.getElementById("bloqueo");
