@@ -63,7 +63,18 @@ function Validar(lista){
         if(lista[19] != ""){
             mensaje = mensaje + lista[19] + "\n";
         }
-        var deudas = lista[23];
+        var recomendacion = lista[23];
+        var index = 0;
+        if(recomendacion == "Prorroga Adicional"){
+            index = 1;
+        }else if(recomendacion == "Reprogramación"){
+            index = 2;
+        }else if(recomendacion == "Refinanciación"){
+            index = 3;
+        }
+        document.getElementById("SRecomendacion").selectedIndex = index;
+        
+        var deudas = lista[24];
         CompletarCronograma(deudas);
 
         if(lista[20] == 0 || lista[20] == 1){
