@@ -2436,28 +2436,45 @@ function InformacionGrabar() {
 function InformacionFinalizar() {
     var listaTodo = [];
     var lista = [];
-    var DC = getDatosCliente1();
-    if (DC != null) {
-        lista.push(DC);
-        var BG = getBalanceGeneral();
-        lista.push(BG);
-        var ER = getEstadoResultados();
-        lista.push(ER);
-        var C = getCanalizacion();
-        lista.push(C);
-        var R = getRatios();
-        lista.push(R);
-        Dictaminar();
-        var dictamen = document.getElementById("dictamen").value;
-        lista.push(dictamen);
-        listaTodo.push(lista);
-        listaTodo.push(getIngresos());
-        listaTodo.push(getEgresos());
-        listaTodo.push(getPatrimonioInmueble());
-        listaTodo.push(getPatrimonioVehMaq());
-        listaTodo.push(getFEN());
-        alert(dictamen);
-        return listaTodo;
+    var afectado = document.getElementById("preg1").value;
+    var pasa = true;
+    if(afectado == ""){
+        pasa = false;
+        alert("Por favor, indique si el cliente ha sido (o no) afectado por FEN.")
+    }else if(afectado == "Si"){
+        var recomendacion = document.getElementById("SRecomendacion").value;
+        if(recomendacion == ""){
+            alert("Por favor, indique una recomendación para el cliente.")
+        }
+    }
+    if(pasa){
+        var DC = getDatosCliente1();
+        if (DC != null) {
+            lista.push(DC);
+            var BG = getBalanceGeneral();
+            lista.push(BG);
+            var ER = getEstadoResultados();
+            lista.push(ER);
+            var C = getCanalizacion();
+            lista.push(C);
+            var R = getRatios();
+            lista.push(R);
+            Dictaminar();
+            var dictamen = document.getElementById("dictamen").value;
+            lista.push(dictamen);
+            listaTodo.push(lista);
+            listaTodo.push(getIngresos());
+            listaTodo.push(getEgresos());
+            listaTodo.push(getPatrimonioInmueble());
+            listaTodo.push(getPatrimonioVehMaq());
+            listaTodo.push(getFEN());
+            alert(dictamen);
+            return listaTodo;
+        }else{
+            return null;
+        }
+    }else{
+        return null;
     }
 }
 function getFEN(){
