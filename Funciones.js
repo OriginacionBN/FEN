@@ -2665,9 +2665,9 @@ function Descargar(){
     document.getElementById("seccion_patrimonio").style.display = '';
     document.getElementById("seccion_estados").style.display = '';
     document.getElementById("seccion_FEN2").style.display = '';
-    document.getElementById("seccion_preg5").rows = '8';
+    //document.getElementById("seccion_preg5").rows = '8';
     window.print();
-    document.getElementById("seccion_preg5").rows = '5';
+    //document.getElementById("seccion_preg5").rows = '5';
     document.getElementById("seccion_FEN1").style.display = 'none';
     document.getElementById("seccion_ingresos").style.display = 'none';
     document.getElementById("seccion_egresos").style.display = 'none';
