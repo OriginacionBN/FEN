@@ -2441,10 +2441,12 @@ function InformacionFinalizar() {
     if(afectado == ""){
         pasa = false;
         alert("Por favor, indique si el cliente ha sido (o no) afectado por FEN.")
+        return null;
     }else if(afectado == "Si"){
         var recomendacion = document.getElementById("SRecomendacion").value;
         if(recomendacion == ""){
-            alert("Por favor, indique una recomendación para el cliente.")
+            alert("Por favor, indique una recomendación para el cliente.");
+            return null;
         }
     }
     if(pasa){
