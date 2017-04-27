@@ -88,7 +88,6 @@ function Validar(lista){
             var patVeh = datos[3];
             CompletarPVM(patVeh);
             var ing = datos[4];
-            alert(ing)
             CompletarIngresos(ing);
             var egr = datos[5];
             CompletarEgresos(egr);
