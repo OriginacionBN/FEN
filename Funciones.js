@@ -66,11 +66,11 @@ function Validar(lista){
         var recomendacion = lista[23];
         var index = 0;
         if(recomendacion == "Prorroga Adicional"){
-            index = 1;
-        }else if(recomendacion == "Reprogramación"){
             index = 2;
-        }else if(recomendacion == "Refinanciación"){
+        }else if(recomendacion == "Reprogramación"){
             index = 3;
+        }else if(recomendacion == "Refinanciación"){
+            index = 4;
         }
         document.getElementById("SRecomendacion").selectedIndex = index;
         
