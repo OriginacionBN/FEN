@@ -65,7 +65,9 @@ function Validar(lista){
         }
         var recomendacion = lista[23];
         var index = 0;
-        if(recomendacion == "Prorroga Adicional"){
+        if(recomendacion == "No tomar acción"){
+            index = 1;
+        }else if(recomendacion == "Prorroga Adicional"){
             index = 2;
         }else if(recomendacion == "Reprogramación"){
             index = 3;
